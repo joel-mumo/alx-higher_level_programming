@@ -10,8 +10,8 @@ int is_palindrome(listint_t **head)
 	unsigned int len = 1;
 	listint_t *temp;
 
-	if (head == NULL || *head == NULL)
-		return (0);
+	if (head == NULL || (*head)->next == NULL)
+		return (1);
 
 	temp = *head;
 	while (temp)
@@ -20,5 +20,5 @@ int is_palindrome(listint_t **head)
 		len++;
 	}
 
-	return (1);
+	return (0);
 }
