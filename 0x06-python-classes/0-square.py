@@ -1,11 +1,10 @@
 #!/usr/bin/python3
 """Square module.
 
-This contains a class that defines a square.
+This module contains a class that defines a square.
 
 """
 
-class Square():
+class Square:
     """This defines a square."""
-
     pass
