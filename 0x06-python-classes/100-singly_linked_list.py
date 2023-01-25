@@ -64,6 +64,7 @@ class Node:
             if node is None or self.__head.data >= value:
                 self.__head = Node(value, self.__head)
             else:
-                while node.next_node is not None and node.next_node.data < value:
+                while node.next_node is not None and
+                node.next_node.data < value:
                     node = node.next_node
                 node.next_node = Node(value, node.next_node)
