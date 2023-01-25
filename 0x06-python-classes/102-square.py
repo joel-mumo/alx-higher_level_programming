@@ -1,5 +1,8 @@
 #!/usr/bin/python3
-"""Define a class Square."""
+"""Define a class Square.
+This module contains a class that defines a square and
+its size and checking if the given values are right
+"""
 
 
 class Square:
@@ -27,7 +30,7 @@ class Square:
 
     def area(self):
         """Return the current area of the square."""
-        return (self.__size ** self.__size)
+        return (self.__size * self.__size)
 
     def __eq__(self, other):
         """Define the == comparison to a Square.
