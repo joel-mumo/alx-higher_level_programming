@@ -1,5 +1,8 @@
 #!/usr/bin/python3
-"""Define classes for a singly-linked list"""
+"""Define classes for a singly-linked list
+contains methods about the creation and hendling of
+SinglyLinkedList and Node objects
+"""
 
 
 class Node:
@@ -39,32 +42,33 @@ class Node:
         else:
             raise TypeError("next_node must be a Node object")
 
-    class SinglyLinkedList:
-        """Defines a singly-linked list"""
 
-        def __init__(self):
-            """Initialises the linked list"""
-            self.head = None
+class SinglyLinkedList:
+    """Defines a singly-linked list"""
 
-        def __str__(self):
-            """Define the print representation of a SinglyLinkedList"""
-            my_str = ""
-            node = self.__head
+    def __init__(self):
+        """Initialises the linked list"""
+        self.head = None
 
-            if node is not None:
-                while node is not None:
-                    my_str += str(node.data) + '\n'
-                    node = node.next_node
-            return my_str[:-1]
+    def __str__(self):
+        """Define the print representation of a SinglyLinkedList"""
+        my_str = ""
+        node = self.__head
 
-        def sorted_insert(self, value):
-            """Inserts a node in a sorted linked list"""
-            node = self.__head
+        if node is not None:
+            while node is not None:
+                my_str += str(node.data) + '\n'
+                node = node.next_node
+        return my_str[:-1]
 
-            if node is None or self.__head.data >= value:
-                self.__head = Node(value, self.__head)
-            else:
-                while node.next_node is not None and
-                node.next_node.data < value:
-                    node = node.next_node
-                node.next_node = Node(value, node.next_node)
+    def sorted_insert(self, value):
+        """Inserts a node in a sorted linked list"""
+        node = self.__head
+
+        if node is None or self.__head.data >= value:
+            self.__head = Node(value, self.__head)
+
+        else:
+            while node.next_node is not None and node.next_node.data < value:
+                node = node.next_node
+            node.next_node = Node(value, node.next_node)
