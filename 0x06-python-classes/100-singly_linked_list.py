@@ -4,6 +4,7 @@
 
 class Node:
     """This represents a node is a singly-linked list"""
+
     def __init__(self, data, next_node=None):
         """This initialises a new node
         Args:
@@ -48,28 +49,21 @@ class Node:
         def __str__(self):
             """Define the print representation of a SinglyLinkedList"""
             my_str = ""
-            node = self.head
-            while node:
-                my_str += str(node.data)
-                my_str += '\n'
-                node = node.next_node
-                return my_str[:-1]
+            node = self.__head
+
+            if node is not None:
+                while node is not None:
+                    my_str += str(node.data) + '\n'
+                    node = node.next_node
+            return my_str[:-1]
 
         def sorted_insert(self, value):
             """Inserts a node in a sorted linked list"""
-            new_node = Node(value)
+            node = self.__head
 
-            if self.head is None:
-                self.head = new_node
-                return
-
-            if value < self.head.data:
-                new_node.next_node = self.head
-                self.head = new_node
-                return
-
-            node = self.head
-            while node.next_node and node.next_node.data < value:
-                node = node.next_node
-            new_node.next_node = node.next_node
-            node.next_node = new_node
+            if node is None or self.__head.data >= value:
+                self.__head = Node(value, self.__head)
+            else:
+                while node.next_node is not None and node.next_node.data < value:
+                    node = node.next_node
+                node.next_node = Node(value, node.next_node)
