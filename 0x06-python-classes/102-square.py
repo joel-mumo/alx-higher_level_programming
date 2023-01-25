@@ -37,39 +37,45 @@ class Square:
         Args:
             other (Square): the square object to compare with.
         """
-        return self.area() == other.area()
+        if type(other) is Square:
+            return self.area() == other.area()
 
     def __ne__(self, other):
         """Define the != comparison to a Square.
         Args:
             other (Square): the Square object to compare with.
         """
-        return self.area() != other.area()
+        if type(other) is Square:
+            return self.area() != other.area()
 
     def __lt__(self, other):
         """Define the < comparison to a Square.
         Args:
             other (Square): the Square object to compare with.
         """
-        return return self.area() < other.area()
+        if type(other) is Square:
+            return self.area() < other.area()
 
     def __le__(self, other):
         """Define the <= comparison to a Square.
         Args:
             other (Square): the Square object to compare with.
         """
-        return self.area() <= other.area()
+        if type(other) is Square:
+            return self.area() <= other.area()
 
     def __gt__(self, other):
         """Define the > comparison to a Square.
         Args:
             other (Square): the Square object to compare with.
         """
-        return self.area() > other.area()
+        if type(other) is Square:
+            return self.area() > other.area()
 
     def __ge__(self, other):
         """Define the >= compmarison to a Square.
         Args:
             other (Square): the Square object to compare with.
         """
-        return self.area() >= other.area()
+        if type(other) is Square:
+            return self.area() >= other.area()
