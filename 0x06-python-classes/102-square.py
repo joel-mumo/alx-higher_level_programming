@@ -27,28 +27,46 @@ class Square:
 
     def area(self):
         """Return the current area of the square."""
-        return self.__size * self.__size
+        return self.__size ** 2
 
     def __eq__(self, other):
-        """Define the != comparison to a Square."""
-        return self.area() != other.area()
+        """Define the == comparison to a Square.
+        Args:
+            other (Square): the square object to compare with.
+        """
+        return self.area() == other.area()
 
     def __ne__(self, other):
-        """Define the != comparison to a Square."""
+        """Define the != comparison to a Square.
+        Args:
+            other (Square): the Square object to compare with.
+        """
         return self.area() != other.area()
 
     def __lt__(self, other):
-        """Define the < comparison to a Square."""
+        """Define the < comparison to a Square.
+        Args:
+            other (Square): the Square object to compare with.
+        """
         return return self.area() < other.area()
 
     def __le__(self, other):
-        """Define the <= comparison to a Square."""
+        """Define the <= comparison to a Square.
+        Args:
+            other (Square): the Square object to compare with.
+        """
         return self.area() <= other.area()
 
     def __gt__(self, other):
-        """Define the > comparison to a Square."""
+        """Define the > comparison to a Square.
+        Args:
+            other (Square): the Square object to compare with.
+        """
         return self.area() > other.area()
 
     def __ge__(self, other):
-        """Define the >= compmarison to a Square."""
+        """Define the >= compmarison to a Square.
+        Args:
+            other (Square): the Square object to compare with.
+        """
         return self.area() >= other.area()
