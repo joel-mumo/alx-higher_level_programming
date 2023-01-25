@@ -15,11 +15,12 @@ class Node:
 
     @property
     def data(self):
-        """set the data of the new node"""
-        return (self.__data)
+        """sets the data of the new node"""
+        return self.__data
 
     @data.setter
     def data(self, value):
+        """Sets the data into a node"""
         if type(value) is int:
             self.__data = value
         else:
@@ -39,35 +40,36 @@ class Node:
 
     class SinglyLinkedList:
         """Defines a singly-linked list"""
-        def __init__(self):
-            """Initialises a new singly-linked list"""
-            self.__head = None
 
-        def sorted_insert(self, value):
-            """Insert a new Node to the SinglyLinkedList
-            Args:
-                value (Node): The new Node to insert.
-            """
-            new = Node(value)
-            if self.__head is None:
-                new.next_node = None
-                self.__head = new
-            elif self.__head.data > value:
-                new.next_node = self.__head
-                self.__head = new
-            else:
-                temp = self.__head
-                while (temp.next_node is not None and
-                        temp.next_node.data < value):
-                    temp = temp.next_node
-                    new.next_node = temp.next_node
-                    temp.next_node = new
+        def __init__(self):
+            """Initialises the linked list"""
+            self.head = None
 
         def __str__(self):
-            """Define the print behavior of a SinglyLinkedList"""
-            values = []
-            temp = self.__head
-            while temp is not None:
-                values.append(str(temp.data))
-                temp = temp.next_node
-            return ('\n'.join(values))
+            """Define the print representation of a SinglyLinkedList"""
+            my_str = ""
+            node = self.head
+            while node:
+                my_str += str(node.data)
+                my_str += '\n'
+                node = node.next_node
+                return my_str[:-1]
+
+        def sorted_insert(self, value):
+            """Inserts a node in a sorted linked list"""
+            new_node = Node(value)
+
+            if self.head is None:
+                self.head = new_node
+                return
+
+            if value < self.head.data:
+                new_node.next_node = self.head
+                self.head = new_node
+                return
+
+            node = self.head
+            while node.next_node and node.next_node.data < value:
+                node = node.next_node
+            new_node.next_node = node.next_node
+            node.next_node = new_node
