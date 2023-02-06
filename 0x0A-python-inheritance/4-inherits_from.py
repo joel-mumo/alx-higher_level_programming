@@ -3,6 +3,7 @@
 """Defines function that compares an object with an instance"""
 
 
+
 def inherits_from(obj, a_class):
    """Checks if an object is an inherited instance of a class
    Args:
