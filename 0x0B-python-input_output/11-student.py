@@ -13,6 +13,9 @@ class Student:
             last_name: last name of student
             age: age of student
         """
+        self.first_name = first_name
+        self.last_name = last_name
+        self.age = age
 
     def to_json(self, attrs=None):
         """Gets a Dict representation of a student"""
