@@ -130,7 +130,7 @@ class Base:
                 writer.writeheader()
                 writer.writerows(list_objs)
 
-    @classmethods
+    @classmethod
     def load_from_file_csv(cls):
         """Deserializes CSV format from a file.
         Returns: list of instances
